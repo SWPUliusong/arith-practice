@@ -22,7 +22,7 @@ func (q *Queue) pop() string {
 
 // 选中条件
 func is_seller(str string) bool {
-	if(str[0:1] == "t") {
+	if str[0:1] == "t" {
 		return true
 	}
 	return false
