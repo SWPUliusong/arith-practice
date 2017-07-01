@@ -38,7 +38,7 @@ func main() {
 	}
 
 	node := find_lowest_cost_node(costs)
-	for !has_elem(processed, node) {
+	for !has_elem(processed, node) && node != "" {
 		cost := costs[node]
 		neighbors := graph[node]
 		for n, c := range neighbors {
