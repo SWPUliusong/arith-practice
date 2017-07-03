@@ -5,28 +5,27 @@ import (
 	"math"
 )
 
-type M map[string]int
 // 已检测的node
 var processed = []string{}
 
 func main() {
 	// 图形结构
-	graph := map[string]M{
-		"start": M{
+	graph := map[string]map[string]int{
+		"start": {
 			"a": 6,
 			"b": 2,
 		},
-		"a": M{
+		"a": {
 			"fin": 1,
 		},
-		"b": M{
+		"b": {
 			"a":   3,
 			"fin": 5,
 		},
 	}
 
 	// 花费
-	costs := M{
+	costs := map[string]int{
 		"a": 6,
 		"b": 2,
 	}

@@ -2,27 +2,25 @@ package main
 
 import "fmt"
 
-type info map[string]float64
-
 func main() {
-	courses := map[string]info {
-		"英语": info {
+	courses := map[string]map[string]float64 {
+		"英语": {
 			"start": 9.30,
 			"end": 10.30,
 		},
-		"美术": info {
+		"美术": {
 			"start": 9.00,
 			"end": 10.00,
 		},
-		"计算机": info {
+		"计算机": {
 			"start": 10.30,
 			"end": 11.30,
 		},
-		"数学": info {
+		"数学": {
 			"start": 10.00,
 			"end": 11.00,
 		},
-		"音乐": info {
+		"音乐": {
 			"start": 11.00,
 			"end": 12.00,
 		},
@@ -31,7 +29,7 @@ func main() {
 	fmt.Println(greed(courses))
 }
 
-func greed(courses map[string]info) []string {
+func greed(courses map[string]map[string]float64) []string {
 	res := []string{}
 	startTime := 0.0
 	earliestEndTime := 24.0
@@ -57,7 +55,7 @@ func greed(courses map[string]info) []string {
 	return res
 }
 
-func isEmpty(m map[string]info) bool {
+func isEmpty(m map[string]map[string]float64) bool {
 	for _ = range m {
 		return false
 	}
